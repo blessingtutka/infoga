@@ -1,0 +1,30 @@
+{
+  "name": "infoga",
+  "version": "1.0.0",
+  "description": "Basic information gathering application",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/blessingtutka/infoga.git"
+  },
+  "author": "blessingtutka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blessingtutka/infoga/issues"
+  },
+  "homepage": "https://github.com/blessingtutka/infoga#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
