@@ -5,7 +5,7 @@ const getLocation = async (ip) => {
   try {
     const goe = await axios.get(END_POINT);
 
-    return goe.data.city || "Goma";
+    return goe.data.city || "New York";
   } catch (error) {
     return "Unknown location";
   }
