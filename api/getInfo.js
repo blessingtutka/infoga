@@ -1,6 +1,5 @@
 import getLocation from "./getLocation.js";
 import getTemperature from "./getTemperature.js";
-import getIP from "./getIp.js";
 const getInfo = async (req, res) => {
   try {
     const visitorName = req.query.visitor_name || "Blessing Tutka";
