@@ -10,7 +10,7 @@ const getTemperature = async (city) => {
     const temperature = weather.data.main.temp || 11;
     return temperature;
   } catch (error) {
-    return "N/A " + error;
+    return "N/A";
   }
 };
 
