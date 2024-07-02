@@ -4,8 +4,8 @@ import getIP from "./getIp.js";
 const getInfo = async (req, res) => {
   try {
     const visitorName = req.query.visitor_name || "Blessing Tutka";
-    const privateIp = req.ip.replace(/^::ffff:/, "");
-    const clientIp = (await getIP()) || privateIp;
+    const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+    const clientIp = ip.replace(/^::ffff:/, "");
     const city = await getLocation(clientIp);
     const temperature = await getTemperature(city);
     const greeting = `Hello, ${visitorName}!, the temperature is ${temperature} degrees Celsius in ${city}`;
