@@ -4,8 +4,11 @@ import getTemperature from "./getTemperature.js";
 const getInfo = async (req, res) => {
   try {
     const visitorName = req.query.visitor_name || "Blessing Tutka";
-    const clientIp = req.ip;
-    // const ip = clientIp[clientIp.length - 1];
+    let clientIp = req.ip;
+    if (clientIp.startsWith("::ffff:")) {
+      clientIp = clientIp.split("::ffff:")[1];
+    }
+
     const city = await getLocation(clientIp);
     const temperature = await getTemperature("Goma");
 
