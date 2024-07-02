@@ -1,13 +1,16 @@
-import axios from "axios";
-const getIP = async (ip) => {
-  const END_POINT = `https://api.ipify.org?format=json`;
+import { exec } from "child_process";
 
-  try {
-    const response = await axios.get(END_POINT);
-    return response.data.ip;
-  } catch (error) {
-    throw error;
-  }
+const getIP = () => {
+  return new Promise((resolve, reject) => {
+    exec("curl ip-adresim.app", (error, stdout, stderr) => {
+      if (error) {
+        console.error("Error executing curl:", error);
+        reject(error);
+        return null;
+      }
+      resolve(stdout.trim());
+    });
+  });
 };
 
 export default getIP;
